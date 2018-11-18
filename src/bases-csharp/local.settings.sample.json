@@ -1,0 +1,8 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "CommandCenterCosmosDBConnectionString": "<your cosmos connection string>",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+    }
+}
