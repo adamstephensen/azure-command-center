@@ -30,6 +30,8 @@ note: no data is needed for the 'leases' collection. It is used by Signalr
 8. Rename ```local.settings.sample.json``` to ```local.settings.json``` and update the CosmosDb and SignalR connection strings
 8. Execute 'func start' from the /src/bases-csharp folder to start the Bases function
 9. Open 'index.html' from the /src/www folder
+10. (Optional) to remove the Bing Maps licence warning, pass a Bing Maps key in the query string.
+        ```index.html?mapcredentials=<your-bing-maps-key>```
   
 
 # Plan / demo steps
