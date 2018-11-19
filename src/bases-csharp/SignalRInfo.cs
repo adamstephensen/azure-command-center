@@ -1,4 +1,4 @@
-using System;
+
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -7,20 +7,19 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
+using Microsoft.Azure.WebJobs.Extensions.SignalRService;
 
-namespace CommandCenter.Bases
+namespace SignalRBases
 {
-    public static class GetBasess
+    public static class SignalRInfo
     {
-        [FunctionName("GetBases")]
+        [FunctionName("SignalRInfo")]
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous)] HttpRequest req,
-            [CosmosDB("command-center", "bases", ConnectionStringSetting = "CommandCenterCosmosDBConnectionString")]
-                IEnumerable<object> bases,
+            [SignalRConnectionInfo(HubName = "bases")] SignalRConnectionInfo connectionInfo,
             ILogger log)
         {
-            return new OkObjectResult(bases);
+            return new OkObjectResult(connectionInfo);
         }
     }
 }

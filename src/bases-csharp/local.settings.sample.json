@@ -2,7 +2,12 @@
     "IsEncrypted": false,
     "Values": {
         "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-        "CommandCenterCosmosDBConnectionString": "<your cosmos connection string>",
+        "AzureSignalRConnectionString":"<your connection string>",
+        "CommandCenterCosmosDBConnectionString": "<your connection string>",
         "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+    },
+    "Host": {
+        "LocalHttpPort": 7071,
+        "CORS": "*"
     }
 }
