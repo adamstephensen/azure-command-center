@@ -40,7 +40,7 @@ function configureSignalR(info) {
     const connection = new signalR.HubConnectionBuilder()
         .withUrl(info.url, options)
         .build();
-    connection.on('baseUpdated', baseUpdated);
+    connection.on('baseUpdated', updateBaseAndRefreshMap);
     connection.onclose(function () {
         console.log('disconnected');
         setTimeout(function () {
